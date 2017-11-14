@@ -96,7 +96,7 @@ public class CodeBreaker {
 
     /* Create this one */
     private int[] clauseFinal = new int[nSlots]; //Sempre que o resultado for o certo
-    private void strategyNew(boolean[] feedback) {
+    private void strategyNew(boolean[] feedback) throws IOException  {
         for (int i = 0; i < this.nSlots; i++) {
             int[] clause = new int[1];
             if (clauseFinal[i] < 0){
