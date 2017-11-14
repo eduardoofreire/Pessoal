@@ -8,11 +8,13 @@ public class CodeBreaker {
     private int nSlots, nColors;
     private int[] lastGuess;
     private SATtradutor satTradutor;
+    private int[] clauseFinal; 
 
     CodeBreaker(int nSlots, int nColors) throws IOException {
         this.nSlots = nSlots;
         this.nColors = nColors;
         this.lastGuess = null;
+        this.clauseFinal= new int[nSlots * nColors];
         this.satTradutor = new SATtradutor(nSlots, nColors);
         this.generateFixedClauses();
     }
@@ -95,20 +97,21 @@ public class CodeBreaker {
     }
 
     /* Create this one */
-    private int[] clauseFinal = new int[nSlots]; 
+    
+
     private void strategyNew(boolean[] feedback) throws IOException  {
         for (int i = 0; i < this.nSlots; i++) {
-            int[] clause = new int[1];
+            //int[] clause = new int[1];
             if (feedback[i] && clauseFinal[i] == 0){
                 clauseFinal[i] = (satTradutor.attToVar(i, lastGuess[i]));
             }else{
-                clause[0] = (-1 * satTradutor.attToVar(i, lastGuess[i]));
-                clauseFinal[i] = clause[0];
+                if(clauseFinal[i] < 0){
+                    clauseFinal[i] = (-1 * satTradutor.attToVar(i, lastGuess[i]));
+                }
+                //clauseFinal[i] = clause[0];
             }
-            satTradutor.addClause(clause);
             //clause[0] = (satTradutor.attToVar(i, lastGuess[i]));
         }
-        
-        return;
+        satTradutor.addClause(clauseFinal);
     }
 }
