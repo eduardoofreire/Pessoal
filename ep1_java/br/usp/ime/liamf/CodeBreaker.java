@@ -99,8 +99,8 @@ public class CodeBreaker {
     private void strategyNew(boolean[] feedback) throws IOException  {
         for (int i = 0; i < this.nSlots; i++) {
             int[] clause = new int[1];
-            if (lastGuess[i] > 0 && clauseFinal[i] == 0){
-                clauseFinal[i] = lastGuess[i];
+            if (feedback[i] && clauseFinal[i] == 0){
+                clauseFinal[i] = (satTradutor.attToVar(i, lastGuess[i]));
             }else{
                 clause[0] = (-1 * satTradutor.attToVar(i, lastGuess[i]));
                 clauseFinal[i] = clause[0];
