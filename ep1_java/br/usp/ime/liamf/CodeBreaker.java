@@ -65,10 +65,10 @@ public class CodeBreaker {
             return true;
 
         /* Comment and uncomment these lines to test different strategies */
-        strategySimple(feedback);
+        //strategySimple(feedback);
 
-        // strategyFull(feedback);
-        // strategyNew(feedback);
+        //strategyFull(feedback);
+        strategyNew(feedback);
 
         /* Do not the return statement */
         return false;
@@ -95,7 +95,17 @@ public class CodeBreaker {
     }
 
     /* Create this one */
+    private int[] clauseFinal = new int[nSlots]; //Sempre que o resultado for o certo
     private void strategyNew(boolean[] feedback) {
+        for (int i = 0; i < this.nSlots; i++) {
+            int[] clause = new int[1];
+            if (clauseFinal[i] < 0){
+                clause[0] = (-1 * satTradutor.attToVar(i, lastGuess[i]));
+                clauseFinal[i] = clause[0];
+            }
+            //clause[0] = (satTradutor.attToVar(i, lastGuess[i]));
+        }
+        satTradutor.addClause(clauseFinal);
         return;
     }
 }
