@@ -109,7 +109,6 @@ public class CodeBreaker {
                 }
             }else{
                 clause[0] = (-1 * satTradutor.attToVar(i, lastGuess[i]));
-                clauseFinal[i] = clause[0];
             }
             satTradutor.addClause(clause);
         }
