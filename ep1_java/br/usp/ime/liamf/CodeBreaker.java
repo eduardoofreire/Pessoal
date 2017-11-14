@@ -105,9 +105,7 @@ public class CodeBreaker {
             if (feedback[i] && clauseFinal[i] == 0){
                 clauseFinal[i] = (satTradutor.attToVar(i, lastGuess[i]));
             }else{
-                if(clauseFinal[i] < 0){
-                    clauseFinal[i] = (-1 * satTradutor.attToVar(i, lastGuess[i]));
-                }
+                clauseFinal[i] = (-1 * satTradutor.attToVar(i, lastGuess[i]));
                 //clauseFinal[i] = clause[0];
             }
             //clause[0] = (satTradutor.attToVar(i, lastGuess[i]));
