@@ -100,15 +100,18 @@ public class CodeBreaker {
     
    //static int[] clauseFinal = new int[nSlots];
     private void strategyNew(boolean[] feedback) throws IOException  {
-        //int[] clause = new int[nSlots];
+        int[] clause = new int[1];
         for (int i = 0; i < this.nSlots; i++) {
-            if (feedback[i])
+            if (feedback[i]){
                 if(clauseFinal[i] == 0){
-                    clauseFinal[i] = (satTradutor.attToVar(i, this.lastGuess[i]));
+                    clause[0] = (satTradutor.attToVar(i, this.lastGuess[i]));
+                    clauseFinal[i] = clause[0];
                 }
-            else
-                clauseFinal[i] = (-1 * satTradutor.attToVar(i, lastGuess[i]));
+            }else{
+                clause[0] = (-1 * satTradutor.attToVar(i, lastGuess[i]));
+                clauseFinal[i] = clause[0];
+            }
+            satTradutor.addClause(clause);
         }
-        satTradutor.addClause(clauseFinal);
     }
 }
