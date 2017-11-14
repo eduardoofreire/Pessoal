@@ -98,15 +98,17 @@ public class CodeBreaker {
 
     /* Create this one */
     
-   // static int[] clauseFinal = new int[nSlots];
+   //static int[] clauseFinal = new int[nSlots];
     private void strategyNew(boolean[] feedback) throws IOException  {
-        int[] clause = new int[nSlots];
+        //int[] clause = new int[nSlots];
         for (int i = 0; i < this.nSlots; i++) {
             if (feedback[i])
-                clause[i] = (satTradutor.attToVar(i, lastGuess[i]));
+                if(clauseFinal[i] == 0){
+                    clauseFinal[i] = (satTradutor.attToVar(i, this.lastGuess[i]));
+                }
             else
-                clause[i] = (-1 * satTradutor.attToVar(i, lastGuess[i]));
+                clauseFinal[i] = (-1 * satTradutor.attToVar(i, lastGuess[i]));
         }
-        satTradutor.addClause(clause);
+        satTradutor.addClause(clauseFinal);
     }
 }
