@@ -95,7 +95,7 @@ public class CodeBreaker {
     }
 
     /* Create this one */
-    private int[] clauseFinal = new int[nSlots]; //Sempre que o resultado for o certo
+    private int[] clauseFinal = new int[nSlots]; 
     private void strategyNew(boolean[] feedback) throws IOException  {
         for (int i = 0; i < this.nSlots; i++) {
             int[] clause = new int[1];
@@ -103,9 +103,10 @@ public class CodeBreaker {
                 clause[0] = (-1 * satTradutor.attToVar(i, lastGuess[i]));
                 clauseFinal[i] = clause[0];
             }
+            satTradutor.addClause(clause);
             //clause[0] = (satTradutor.attToVar(i, lastGuess[i]));
         }
-        satTradutor.addClause(clauseFinal);
+        
         return;
     }
 }
