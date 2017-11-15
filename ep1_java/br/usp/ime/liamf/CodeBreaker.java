@@ -106,14 +106,12 @@ public class CodeBreaker {
                 if(clauseFinal[i] == 0){
                     clause[0] = (satTradutor.attToVar(i, this.lastGuess[i]));
                     clauseFinal[i] = clause[0];
-                    satTradutor.addClause(clause);
                 }
+                satTradutor.addClause(clauseFinal[i]);
             }else{
                 clause[0] = (-1 * satTradutor.attToVar(i, lastGuess[i]));
                 satTradutor.addClause(clause);
             }
-            System.out.println("feedback["+i+"]= "+feedback[i] + " clause[0]= "+clause[0]+" clauseFinal["+i+"]= "+clauseFinal[i]);
-            //satTradutor.addClause(clause);
         }
     }
 }
