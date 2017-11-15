@@ -4,16 +4,7 @@
  * Aluno: Eduardo Freire de Carvalho Lima
  * Numero USP: 10262627
  * Tarefa: EP1
- * Data: 14/11/2017
- * 
- * Baseado em... (breve se aplicável)
- *
- * DECLARO QUE SOU O ÚNICO AUTOR E RESPONSÁVEL POR ESTE PROGRAMA.  TODAS AS 
- * PARTES DO PROGRAMA, EXCETO AS QUE SÃO BASEADAS EM MATERIAL FORNECIDO  
- * PELO PROFESSOR OU COPIADAS DO LIVRO OU DAS BIBLIOTECAS DE SEDGEWICK & WAYNE, 
- * FORAM DESENVOLVIDAS POR MIM.  DECLARO TAMBÉM QUE SOU RESPONSÁVEL POR TODAS 
- * AS CÓPIAS DESTE PROGRAMA E QUE NÃO DISTRIBUÍ NEM FACILITEI A DISTRIBUIÇÃO
- * DE CÓPIAS DESTA PROGRAMA.
+ * Data: 15/11/2017
  *
  ******************************************************************************/
 
@@ -27,6 +18,22 @@ Ao realizar os experimentos, me deparei com um problema na questão do tempo, po
 estava demorando 20min para rodar cada teste. De acordo com um dúvida postada no paca em relação ao mesmo problema, alterei
 meus dados para n = {4, 8, 12} e c = {4, 16, 64}, números sugeridos pelo monitor.
 Minha máquina é: Macbook Pro (Mid 2012), Processador: 2.5 GHz Intel core i5, Memória: 8GB 1600 MHz DDR3.
+
+As tabelas abaixos mostram a quantidade de cláusulas produzidas (a mesma ao utilizar as estratégias full e new.)
+
+Quantidade de cláusulas produzidas:
+
+|---|-------|--------|--------|
+|c\n|   4   |    8   |   12   |  
+|---|-------|--------|--------|
+| 4 |  40   |   80   |   120  |
+|---|-------|--------|--------|
+|16 |  532  |  1056  |  1608  |
+|---|-------|--------|--------|
+|64 | 8320  | 16.576 | 24.948 |
+|---|-------|--------|--------|
+
+
 
 /********* strategySimple *********/
 
@@ -49,11 +56,23 @@ Quantidade de vezes que o CodeBreaker venceu:
 |---|-------|--------|--------|
 |c\n|   4   |    8   |   12   |  
 |---|-------|--------|--------|
-| 4 | 0/10  |  0/10  |  0/10  |
+| 4 | 10/10 | 10/10  | 10/10  |
 |---|-------|--------|--------|
-|16 | 0/10  |  0/10  |  0/10  |
+|16 | 10/10 | 10/10  | 10/10  |
 |---|-------|--------|--------|
-|64 | 0/10  |  0/10  |  0/10  |
+|64 | 10/10 | 10/10  | 10/10  |
+|---|-------|--------|--------|
+
+Média de Rodadas pro CodeBreaker vencer:
+
+|---|-------|--------|--------|
+|c\n|   4   |    8   |   12   |  
+|---|-------|--------|--------|
+| 4 |  3.6  |   3.8  |   3.9  |
+|---|-------|--------|--------|
+|16 | 13.8  |  13.7  |  15.5  |
+|---|-------|--------|--------|
+|64 | 53.7  |  58.7  |  59.3  |
 |---|-------|--------|--------|
 
 
@@ -83,17 +102,6 @@ Média de Rodadas pro CodeBreaker vencer:
 |64 | 46.4  |  57.4  |  61.3  |
 |---|-------|--------|--------|
 
-Quantidade de cláusulas produzidas:
-
-|---|-------|--------|--------|
-|c\n|   4   |    8   |   12   |  
-|---|-------|--------|--------|
-| 4 |  40   |   80   |   120  |
-|---|-------|--------|--------|
-|16 |  532  |  1056  |  1608  |
-|---|-------|--------|--------|
-|64 | 8320  | 16.576 | 24.948 |
-|---|-------|--------|--------|
 
 
 

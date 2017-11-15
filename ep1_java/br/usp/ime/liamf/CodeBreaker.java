@@ -67,9 +67,9 @@ public class CodeBreaker {
             return true;
 
         /* Comment and uncomment these lines to test different strategies */
-        //strategySimple(feedback);
+        strategySimple(feedback);
 
-        strategyFull(feedback);
+        //strategyFull(feedback);
         //strategyNew(feedback);
 
         /* Do not the return statement */
