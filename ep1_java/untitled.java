@@ -28,7 +28,36 @@ estava demorando 20min para rodar cada teste. De acordo com um dúvida postada n
 meus dados para n = {4, 8, 12} e c = {4, 16, 64}, números sugeridos pelo monitor.
 Minha máquina é: Macbook Pro (Mid 2012), Processador: 2.5 GHz Intel core i5, Memória: 8GB 1600 MHz DDR3.
 
-strategyNew:
+/********* strategySimple *********/
+
+Quantidade de vezes que o CodeBreaker venceu:
+
+|---|-------|--------|--------|
+|c\n|   4   |    8   |   12   |  
+|---|-------|--------|--------|
+| 4 | 0/10  |  0/10  |  0/10  |
+|---|-------|--------|--------|
+|16 | 0/10  |  0/10  |  0/10  |
+|---|-------|--------|--------|
+|64 | 0/10  |  0/10  |  0/10  |
+|---|-------|--------|--------|
+
+/********* strategyFull *********/
+
+Quantidade de vezes que o CodeBreaker venceu:
+
+|---|-------|--------|--------|
+|c\n|   4   |    8   |   12   |  
+|---|-------|--------|--------|
+| 4 | 0/10  |  0/10  |  0/10  |
+|---|-------|--------|--------|
+|16 | 0/10  |  0/10  |  0/10  |
+|---|-------|--------|--------|
+|64 | 0/10  |  0/10  |  0/10  |
+|---|-------|--------|--------|
+
+
+/********* strategyNew *********/
 
 Quantidade de vezes que o CodeBreaker venceu:
 
@@ -65,5 +94,7 @@ Quantidade de cláusulas produzidas:
 |---|-------|--------|--------|
 |64 | 8320  | 16.576 | 24.948 |
 |---|-------|--------|--------|
+
+
 
 
