@@ -99,7 +99,7 @@ public class CodeBreaker {
     /* Create this one */
     
    //static int[] clauseFinal = new int[nSlots];
-    private void strategyNew(boolean[] feedback) throws IOException  {
+    private void strategyNew(boolean[] feedback) throws IOException {
         int[] clause = new int[1];
         for (int i = 0; i < this.nSlots; i++) {
             if (feedback[i]){
@@ -110,6 +110,7 @@ public class CodeBreaker {
             }else{
                 clause[0] = (-1 * satTradutor.attToVar(i, lastGuess[i]));
             }
+            System.out.println("feedback["+i+"]= "+feedback[i] + " clause[0]= "+clause[0]+" clauseFinal["+i+"]= "+clauseFinal[i]);
             satTradutor.addClause(clause);
         }
     }
